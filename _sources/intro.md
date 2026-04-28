@@ -2,6 +2,9 @@
 
 Welcome to the AAE 451 Aircraft Conceptual Design Jupyter Book!
 
+> [!TIP]
+> **[📥 Download Complete Textbook PDF (LaTeX Version)](AAE451_Aircraft_Design_Textbook.pdf)**
+
 This book consolidates **Assignments 1 through 12** into a single, continuous interactive format. It covers the full scope of the aircraft conceptual design process, including:
 
 - **Assignment 1 & 2:** Baseline Data & Mission Requirements
