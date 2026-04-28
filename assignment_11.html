@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Assignment 11 - Multi-Spar Wing Box Structural Design &#8212; AAE 451 Aircraft Conceptual Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'assignment_11';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assignment 12 - Dynamic Stability" href="assignment_12.html" />
+    <link rel="prev" title="Assignment 10 - Structural Loads and V-n Diagram" href="assignment_10.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AAE 451 Aircraft Conceptual Design</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AAE 451: Comprehensive Aircraft Design Framework
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment_01.html">Assignment 1 - Baseline Characterization &amp; Gap Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_02.html">Assignment 2 - System Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_03.html">Assignment 3 - Initial Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_04.html">Assignment 4 - Aerodynamic Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_05.html">Assignment 5 - Constraint Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_06.html">Assignment 6 - Design Check 1 – Propulsion Integration &amp; Wing Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_07.html">Assignment 7 - Configuration Generation and Selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_08.html">Assignment 8 - Horizontal Tail Sizing and Trim Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_09.html">Assignment 9 - Performance Assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_10.html">Assignment 10 - Structural Loads and V-n Diagram</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment 11 - Multi-Spar Wing Box Structural Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_12.html">Assignment 12 - Dynamic Stability</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/assignment_11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Assignment 11 - Multi-Spar Wing Box Structural Design</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-section-geometry-and-moment-of-inertia">1. Cross-Section Geometry and Moment of Inertia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bending-stress-and-margin-of-safety">2. Bending Stress and Margin of Safety</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-cell-torsional-shear-flow">3. Multi-Cell Torsional Shear Flow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spar-web-shear-buckling">4. Spar Web Shear Buckling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spanwise-structural-response">5. Spanwise Structural Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-3d-wing-box-visualization">6. (Bonus) 3D Wing Box Visualization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-11-multi-spar-wing-box-structural-design">
+<h1>Assignment 11 - Multi-Spar Wing Box Structural Design<a class="headerlink" href="#assignment-11-multi-spar-wing-box-structural-design" title="Link to this heading">#</a></h1>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
+<p>The objective of this assignment is to perform the structural design and analysis of a multi-spar wing box for the aircraft sized in previous assignments. Using the aerodynamic loads calculated in <strong>Assignment 10</strong> (Schrenk’s lift distribution, shear force <span class="math notranslate nohighlight">\(V\)</span>, bending moment <span class="math notranslate nohighlight">\(M\)</span>, and applied torsion <span class="math notranslate nohighlight">\(T\)</span>), design the structural members (skins, spar webs, spar caps) and evaluate all critical failure modes. Demonstrate through Margin of Safety (MS) calculations that the wing box meets the structural requirements for a <span class="math notranslate nohighlight">\(n_z = 7.5\,g\)</span> ultimate maneuver case.</p>
+</section>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>A typical multi-spar wing box consists of:</p>
+<ul class="simple">
+<li><p><strong>Upper and lower skins</strong> that carry bending loads (compression/tension) and contribute to torsion resistance.</p></li>
+<li><p><strong>Spar webs</strong> that carry the vertical shear loads and contribute to torsion resistance.</p></li>
+<li><p><strong>Spar caps</strong> (flanges) that are lumped-area booms carrying axial bending loads at maximum distance from the neutral axis.</p></li>
+<li><p><strong>Ribs</strong> spaced at intervals <span class="math notranslate nohighlight">\(L_{rib}\)</span> that maintain the airfoil shape, transfer loads, and set the buckling panel length.</p></li>
+</ul>
+<p>The structural analysis must address the following failure modes:</p>
+<ol class="arabic simple">
+<li><p><strong>Bending Yield</strong> — Direct stress from the bending moment must not exceed the material tensile/compressive yield strength.</p></li>
+<li><p><strong>Shear Flow</strong> — Multi-cell torsional shear flow must be solved using twist-compatibility (Bredt–Batho) equations.</p></li>
+<li><p><strong>Web Shear Buckling</strong> — The spar web panels (bounded by spar caps and ribs) must not buckle under the combined transverse shear and torsional shear.</p></li>
+<li><p><strong>Skin Panel Buckling</strong> — The upper skin panels (in compression during positive-g maneuvers) must not buckle.</p></li>
+</ol>
+<p><strong>Material:</strong> Aluminum 7075-T6 (isotropic)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Elastic Modulus <span class="math notranslate nohighlight">\(E\)</span></p></td>
+<td><p>10.4 × 10⁶ psi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shear Modulus <span class="math notranslate nohighlight">\(G\)</span></p></td>
+<td><p>3.9 × 10⁶ psi</p></td>
+</tr>
+<tr class="row-even"><td><p>Poisson’s Ratio <span class="math notranslate nohighlight">\(\nu\)</span></p></td>
+<td><p>0.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tensile Yield <span class="math notranslate nohighlight">\(F_{ty}\)</span></p></td>
+<td><p>73,000 psi</p></td>
+</tr>
+<tr class="row-even"><td><p>Shear Yield <span class="math notranslate nohighlight">\(F_{sy}\)</span></p></td>
+<td><p>42,000 psi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="tasks">
+<h2>Tasks<a class="headerlink" href="#tasks" title="Link to this heading">#</a></h2>
+<section id="cross-section-geometry-and-moment-of-inertia">
+<h3>1. Cross-Section Geometry and Moment of Inertia<a class="headerlink" href="#cross-section-geometry-and-moment-of-inertia" title="Link to this heading">#</a></h3>
+<p>Define the wing box cross-section at the root and evaluate it along the span.</p>
+<ul class="simple">
+<li><p>Use a NACA 4-digit thickness distribution (or similar) to obtain the true airfoil heights at each spar location.</p></li>
+<li><p>Choose the number of spars (minimum 3, recommended 4), front spar location (e.g. 15% chord), and rear spar location (e.g. 65% chord).</p></li>
+<li><p>Choose structural sizing variables: skin thickness <span class="math notranslate nohighlight">\(t_{skin}\)</span>, spar web thickness <span class="math notranslate nohighlight">\(t_{web}\)</span>, spar cap area <span class="math notranslate nohighlight">\(A_{cap}\)</span>, and rib spacing <span class="math notranslate nohighlight">\(L_{rib}\)</span>.</p></li>
+<li><p>Compute the area moment of inertia <span class="math notranslate nohighlight">\(I_{xx}\)</span> of the wing box cross-section using the parallel-axis theorem for skins, webs (<span class="math notranslate nohighlight">\(\frac{1}{12} t_{web} h^3\)</span>), and caps (<span class="math notranslate nohighlight">\(A_{cap} (h/2)^2\)</span>).</p></li>
+<li><p><strong>Plot:</strong> <span class="math notranslate nohighlight">\(I_{xx}\)</span> variation along the span.</p></li>
+</ul>
+</section>
+<section id="bending-stress-and-margin-of-safety">
+<h3>2. Bending Stress and Margin of Safety<a class="headerlink" href="#bending-stress-and-margin-of-safety" title="Link to this heading">#</a></h3>
+<p>Evaluate the maximum bending stress at each spanwise station.</p>
+<ul class="simple">
+<li><p>Using <span class="math notranslate nohighlight">\(\sigma_{max} = \frac{M \cdot z_{max}}{I_{xx}}\)</span>, compute the peak fiber stress, where <span class="math notranslate nohighlight">\(z_{max}\)</span> is the distance from the neutral axis to the outermost fiber.</p></li>
+<li><p>Compute the <strong>Margin of Safety</strong> for bending yield: <span class="math notranslate nohighlight">\(\text{MS}_{bending} = \frac{F_{ty}}{\sigma_{max}} - 1\)</span>.</p></li>
+<li><p>All MS values must be ≥ 0 for a successful design.</p></li>
+<li><p><strong>Plot:</strong> Bending stress distribution vs. spanwise station.</p></li>
+<li><p><strong>Output:</strong> Root bending stress and MS.</p></li>
+</ul>
+</section>
+<section id="multi-cell-torsional-shear-flow">
+<h3>3. Multi-Cell Torsional Shear Flow<a class="headerlink" href="#multi-cell-torsional-shear-flow" title="Link to this heading">#</a></h3>
+<p>Solve for the constant shear flow in each cell under the applied torsion.</p>
+<ul class="simple">
+<li><p>Compute the enclosed area <span class="math notranslate nohighlight">\(A_i\)</span> and skin arc length <span class="math notranslate nohighlight">\(s_i\)</span> for each cell of the multi-spar box.</p></li>
+<li><p>Set up the twist-compatibility equations (Bredt–Batho):
+$<span class="math notranslate nohighlight">\(\frac{1}{2 A_i G} \oint \frac{q}{t} ds = \frac{d\theta}{dz} \quad \text{(same twist rate for all cells)}\)</span>$</p></li>
+<li><p>Add the torque-equivalence equation: <span class="math notranslate nohighlight">\(T = \sum_i 2 A_i q_i\)</span>.</p></li>
+<li><p>Solve the resulting linear system for the shear flows <span class="math notranslate nohighlight">\(q_i\)</span> and twist rate <span class="math notranslate nohighlight">\(d\theta/dz\)</span>.</p></li>
+<li><p><strong>Plot:</strong> Annotated cross-section of the airfoil showing shear flow directions and magnitudes in each cell.</p></li>
+</ul>
+</section>
+<section id="spar-web-shear-buckling">
+<h3>4. Spar Web Shear Buckling<a class="headerlink" href="#spar-web-shear-buckling" title="Link to this heading">#</a></h3>
+<p>Evaluate the shear buckling of the most critical spar web panel.</p>
+<ul class="simple">
+<li><p>The web panel dimensions are set by the spar height <span class="math notranslate nohighlight">\(h\)</span> and the rib spacing <span class="math notranslate nohighlight">\(L_{rib}\)</span>.</p></li>
+<li><p>Compute the buckling coefficient <span class="math notranslate nohighlight">\(k_s\)</span> for a clamped panel: <span class="math notranslate nohighlight">\(k_s = 8.98 + \frac{5.6}{(a/b)^2}\)</span> where <span class="math notranslate nohighlight">\(a/b = \max(L_{rib}, h) / \min(L_{rib}, h)\)</span>.</p></li>
+<li><p>Compute the critical buckling stress: <span class="math notranslate nohighlight">\(\tau_{cr} = k_s \frac{\pi^2 E}{12(1 - \nu^2)} \left(\frac{t_{web}}{b}\right)^2\)</span> where <span class="math notranslate nohighlight">\(b = \min(L_{rib}, h)\)</span>.</p></li>
+<li><p>The applied shear stress combines the vertical shear (<span class="math notranslate nohighlight">\(V\)</span>) component and the torsional shear flow: <span class="math notranslate nohighlight">\(\tau_{applied} = (q_{max,torsion} + q_V) / t_{web}\)</span>.</p></li>
+<li><p>Compute the <strong>Margin of Safety</strong> for web shear buckling: <span class="math notranslate nohighlight">\(\text{MS}_{buckling} = \frac{\tau_{cr}}{\tau_{applied}} - 1\)</span>.</p></li>
+<li><p>Compute the <strong>Margin of Safety</strong> for web material shear yield: <span class="math notranslate nohighlight">\(\text{MS}_{yield} = \frac{F_{sy}}{\tau_{applied}} - 1\)</span>.</p></li>
+<li><p><strong>Output:</strong> <span class="math notranslate nohighlight">\(\tau_{cr}\)</span>, <span class="math notranslate nohighlight">\(\tau_{applied}\)</span>, and both MS values.</p></li>
+</ul>
+</section>
+<section id="spanwise-structural-response">
+<h3>5. Spanwise Structural Response<a class="headerlink" href="#spanwise-structural-response" title="Link to this heading">#</a></h3>
+<p>Evaluate the structural response continuously along the semi-span.</p>
+<ul class="simple">
+<li><p>Compute <span class="math notranslate nohighlight">\(I_{xx}(y)\)</span>, <span class="math notranslate nohighlight">\(\sigma_{max}(y)\)</span>, deflection <span class="math notranslate nohighlight">\(\delta(y)\)</span> (by double-integrating the curvature <span class="math notranslate nohighlight">\(M/(EI)\)</span>), and twist angle <span class="math notranslate nohighlight">\(\theta(y)\)</span> (by integrating the twist rate from the shear flow solution).</p></li>
+<li><p><strong>Plot:</strong> A 2×2 panel plot showing: (a) <span class="math notranslate nohighlight">\(I_{xx}\)</span> vs. <span class="math notranslate nohighlight">\(y\)</span>, (b) <span class="math notranslate nohighlight">\(\sigma_{max}\)</span> vs. <span class="math notranslate nohighlight">\(y\)</span> with yield limit line, (c) deflection vs. <span class="math notranslate nohighlight">\(y\)</span>, (d) twist angle vs. <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+</ul>
+</section>
+<section id="bonus-3d-wing-box-visualization">
+<h3>6. (Bonus) 3D Wing Box Visualization<a class="headerlink" href="#bonus-3d-wing-box-visualization" title="Link to this heading">#</a></h3>
+<p>Generate a 3D plot of the swept, tapered wing box.</p>
+<ul class="simple">
+<li><p>Show the wing skins (with transparency), internal spar webs, spar caps, and ribs.</p></li>
+<li><p>The geometry must correctly account for sweep angle, taper ratio, and true airfoil contour.</p></li>
+</ul>
+</section>
+</section>
+<section id="deliverables">
+<h2>Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<p>Submit a presentation slide deck (e.g., PowerPoint or PDF) via Brightspace. The presentation must contain:</p>
+<ol class="arabic simple">
+<li><p><strong>Cross-section sketch</strong> with labeled structural members and dimensions.</p></li>
+<li><p><strong>Bending Analysis:</strong> <span class="math notranslate nohighlight">\(I_{xx}\)</span>, root bending stress, and MS for bending yield.</p></li>
+<li><p><strong>Shear Flow Diagram:</strong> Annotated airfoil cross-section with cell shear flows.</p></li>
+<li><p><strong>Buckling Analysis:</strong> <span class="math notranslate nohighlight">\(\tau_{cr}\)</span>, <span class="math notranslate nohighlight">\(\tau_{applied}\)</span>, MS for web buckling and material yield.</p></li>
+<li><p><strong>Spanwise Response Plots:</strong> <span class="math notranslate nohighlight">\(I_{xx}\)</span>, stress, deflection, twist vs. span.</p></li>
+<li><p><strong>MS Summary Table:</strong> A table listing each failure mode, allowable, applied, and Margin of Safety.</p></li>
+<li><p><strong>Summary &amp; Discussion:</strong> Discuss whether the design passes all structural checks and, if not, propose design changes to achieve positive margins.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="assignment_10.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assignment 10 - Structural Loads and V-n Diagram</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="assignment_12.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 12 - Dynamic Stability</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-section-geometry-and-moment-of-inertia">1. Cross-Section Geometry and Moment of Inertia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bending-stress-and-margin-of-safety">2. Bending Stress and Margin of Safety</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-cell-torsional-shear-flow">3. Multi-Cell Torsional Shear Flow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spar-web-shear-buckling">4. Spar Web Shear Buckling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spanwise-structural-response">5. Spanwise Structural Response</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-3d-wing-box-visualization">6. (Bonus) 3D Wing Box Visualization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">Deliverables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor of Practice
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

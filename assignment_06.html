@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Assignment 6 - Design Check 1 – Propulsion Integration &amp; Wing Definition &#8212; AAE 451 Aircraft Conceptual Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'assignment_06';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assignment 7 - Configuration Generation and Selection" href="assignment_07.html" />
+    <link rel="prev" title="Assignment 5 - Constraint Diagram" href="assignment_05.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AAE 451 Aircraft Conceptual Design</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AAE 451: Comprehensive Aircraft Design Framework
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment_01.html">Assignment 1 - Baseline Characterization &amp; Gap Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_02.html">Assignment 2 - System Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_03.html">Assignment 3 - Initial Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_04.html">Assignment 4 - Aerodynamic Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_05.html">Assignment 5 - Constraint Diagram</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment 6 - Design Check 1 – Propulsion Integration &amp; Wing Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_07.html">Assignment 7 - Configuration Generation and Selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_08.html">Assignment 8 - Horizontal Tail Sizing and Trim Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_09.html">Assignment 9 - Performance Assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_10.html">Assignment 10 - Structural Loads and V-n Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_11.html">Assignment 11 - Multi-Spar Wing Box Structural Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_12.html">Assignment 12 - Dynamic Stability</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/assignment_06.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Assignment 6 - Design Check 1 – Propulsion Integration & Wing Definition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">1. Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">2. Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-propulsion-system-selection">Task 2.1: Propulsion System Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-2-wing-planform-airfoil-selection">Task 2.2: Wing Planform &amp; Airfoil Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-3-weight-refinement-sensitivity-update">Task 2.3: Weight Refinement (Sensitivity Update)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">3. Deliverables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters-table">3.1 Input Parameters Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propulsion-wing-output-report">3.2 Propulsion &amp; Wing Output Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-update">3.3 Weight Update</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-single-source-of-truth-file">3.4 Configuration “Single Source of Truth” File</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-6-design-check-1-propulsion-integration-wing-definition">
+<h1>Assignment 6 - Design Check 1 – Propulsion Integration &amp; Wing Definition<a class="headerlink" href="#assignment-6-design-check-1-propulsion-integration-wing-definition" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="objective">
+<h2>1. Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
+<p>The goal of this assignment is to freeze the primary configuration parameters of your aircraft. Teams will transition from “unknown engine” sizing to a realistic design by selecting an off-the-shelf propulsion system and defining the specific wing geometry. You will use your Constraint Diagram to verify that the selected engine and wing area meet all mission requirements and update your Maximum Takeoff Weight (MTOW) based on these physical selections.</p>
+</section>
+<section id="tasks">
+<h2>2. Tasks<a class="headerlink" href="#tasks" title="Link to this heading">#</a></h2>
+<section id="task-2-1-propulsion-system-selection">
+<h3>Task 2.1: Propulsion System Selection<a class="headerlink" href="#task-2-1-propulsion-system-selection" title="Link to this heading">#</a></h3>
+<p>Using the <strong>Constraint Diagram</strong> developed in the previous assignment:</p>
+<ol class="arabic simple">
+<li><p><strong>Identify the Design Space:</strong> Locate your feasible design space (the area satisfying all <span class="math notranslate nohighlight">\(T/W\)</span> and <span class="math notranslate nohighlight">\(W/S\)</span> constraints).</p></li>
+<li><p><strong>Select an Engine:</strong> Search for commercially available “off-the-shelf” propulsion systems (e.g., Rotax, Lycoming, Pratt &amp; Whitney, GE, JetCat, etc.) that fit your aircraft class.</p></li>
+<li><p><strong>Determine Number of Engines:</strong> Decide on the number of engines (<span class="math notranslate nohighlight">\(N_{eng}\)</span>) required to meet the Thrust-to-Weight (<span class="math notranslate nohighlight">\(T/W\)</span>) requirement found in your constraint diagram.</p></li>
+<li><p><strong>Verification:</strong> Plot the installed thrust of your selected propulsion system (considering approximate installation losses, e.g., 3-5% for inlets/nozzles) onto your Constraint Diagram to ensure the point lies within the feasible design space.</p></li>
+</ol>
+</section>
+<section id="task-2-2-wing-planform-airfoil-selection">
+<h3>Task 2.2: Wing Planform &amp; Airfoil Selection<a class="headerlink" href="#task-2-2-wing-planform-airfoil-selection" title="Link to this heading">#</a></h3>
+<p>Define the physical geometry of the wing:</p>
+<ol class="arabic simple">
+<li><p><strong>Wing Loading (<span class="math notranslate nohighlight">\(W/S\)</span>):</strong> Select a specific design point (<span class="math notranslate nohighlight">\(W/S\)</span>) from your constraint diagram that minimizes weight or cost while meeting all constraints.</p></li>
+<li><p><strong>Wing Area (<span class="math notranslate nohighlight">\(S\)</span>):</strong> Calculate the required wing area based on your current <span class="math notranslate nohighlight">\(W_{TO}\)</span> estimate and selected <span class="math notranslate nohighlight">\(W/S\)</span>.</p></li>
+<li><p><strong>Planform Parameters:</strong> Select and justify the following:</p>
+<ul class="simple">
+<li><p>Aspect Ratio (<span class="math notranslate nohighlight">\(AR\)</span>)</p></li>
+<li><p>Sweep Angle (<span class="math notranslate nohighlight">\(\Lambda\)</span>)</p></li>
+<li><p>Taper Ratio (<span class="math notranslate nohighlight">\(\lambda\)</span>)</p></li>
+</ul>
+</li>
+<li><p><strong>Airfoil Selection:</strong> Select an airfoil that meets your <span class="math notranslate nohighlight">\(C_{L_{max}}\)</span> requirements (landing/takeoff) and cruise drag characteristics. Include a lift-curve slope and drag polar estimation for the selected airfoil and for the defined wing planform using OpenVSP, XFLR5 ,or a similar software. Make sure to add the effect of the leading-edge vortex.</p></li>
+</ol>
+</section>
+<section id="task-2-3-weight-refinement-sensitivity-update">
+<h3>Task 2.3: Weight Refinement (Sensitivity Update)<a class="headerlink" href="#task-2-3-weight-refinement-sensitivity-update" title="Link to this heading">#</a></h3>
+<p>The selection of a specific engine and wing geometry changes the aircraft weight. You must now determine the critical sizing case.</p>
+<ol class="arabic simple">
+<li><p><strong>Engine Weight:</strong> Replace the statistical engine weight estimation with the <em>actual</em> dry weight of your selected engine(s) + accessories.</p></li>
+<li><p><strong>Wing Weight:</strong> Estimate the wing weight impact based on your selected Aspect Ratio and Sweep angle (higher <span class="math notranslate nohighlight">\(AR\)</span> and Sweep generally increase structural weight).</p></li>
+<li><p><strong>Dual-Mission Sizing:</strong> Perform the weight sizing analysis for <strong>both</strong> missions defined in the RFP to determine which one drives the design (the “Design Mission”):</p>
+<ul class="simple">
+<li><p><strong>Air-to-Air Combat Mission:</strong> (RFP Sections 3.3.1 &amp; 3.4.1) – Note the dash requirement of Mach 1.6 at 30,000 ft and sustained turn requirements.</p></li>
+<li><p><strong>Strike Mission:</strong> (RFP Sections 3.3.2 &amp; 3.4.2) – Note the sea level dash requirement (Mach 0.85+) and specific payload configuration.</p></li>
+</ul>
+</li>
+<li><p><strong>New MTOW:</strong> Recalculate the Maximum Takeoff Weight (<span class="math notranslate nohighlight">\(W_{TO}\)</span>) based on the most demanding of the two missions above.</p>
+<ul class="simple">
+<li><p><em>Check:</em> If the new weight varies significantly (&gt;5%) from your previous iteration, you must re-check if your selected engine still provides enough Thrust/Weight.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+</section>
+</section>
+<section id="deliverables">
+<h2>3. Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<p>Submit a presentation and the input file, including the following sections:</p>
+<section id="input-parameters-table">
+<h3>3.1 Input Parameters Table<a class="headerlink" href="#input-parameters-table" title="Link to this heading">#</a></h3>
+<p>Provide a clear table listing the inputs used for your decisions:</p>
+<ul class="simple">
+<li><p><strong>Mission Inputs:</strong> Required Range/Endurance, Payload Weight.</p></li>
+<li><p><strong>Constraint Inputs:</strong> <span class="math notranslate nohighlight">\(C_{L_{max}}\)</span> used, field lengths required.</p></li>
+<li><p><strong>High Lift Devices:</strong> Selection of flaps/slats types (e.g., plain, split, fowler) and anticipated deflection angles for takeoff and landing.</p></li>
+<li><p><strong>Selected Geometric Inputs:</strong> Aspect Ratio (<span class="math notranslate nohighlight">\(AR\)</span>), Taper (<span class="math notranslate nohighlight">\(\lambda\)</span>), Sweep (<span class="math notranslate nohighlight">\(\Lambda\)</span>), Thickness-to-chord ratio (<span class="math notranslate nohighlight">\(t/c\)</span>).</p></li>
+</ul>
+</section>
+<section id="propulsion-wing-output-report">
+<h3>3.2 Propulsion &amp; Wing Output Report<a class="headerlink" href="#propulsion-wing-output-report" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Propulsion Selection:</strong></p>
+<ul>
+<li><p>Manufacturer and Model Name.</p></li>
+<li><p>Max Thrust Dry/MIL (Sea Level Static).</p></li>
+<li><p>Number of Engines.</p></li>
+<li><p>SFC Dry/MIL.</p></li>
+<li><p>Engine Weight.</p></li>
+</ul>
+</li>
+<li><p><strong>Wing Definition:</strong></p>
+<ul>
+<li><p>Selected Airfoil Section (include an image of the profile).</p></li>
+<li><p>Final Wing Area (<span class="math notranslate nohighlight">\(S_{ref}\)</span>).</p></li>
+<li><p>Wingspan (<span class="math notranslate nohighlight">\(b\)</span>).</p></li>
+<li><p>Mean Aerodynamic Chord (<span class="math notranslate nohighlight">\(MAC\)</span>).</p></li>
+</ul>
+</li>
+<li><p><strong>Performance Verification:</strong></p>
+<ul>
+<li><p><strong>Thrust Available vs. Thrust Required:</strong> A value comparison showing your selected engine exceeds the requirement.</p></li>
+<li><p><strong>Final Design Point:</strong> An updated Constraint Diagram showing the specific point selected (<span class="math notranslate nohighlight">\(T/W\)</span> and <span class="math notranslate nohighlight">\(W/S\)</span>).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="weight-update">
+<h3>3.3 Weight Update<a class="headerlink" href="#weight-update" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>New Maximum Takeoff Weight (<span class="math notranslate nohighlight">\(W_{TO}\)</span>)</strong></p></li>
+<li><p><strong>Empty Weight (<span class="math notranslate nohighlight">\(W_{empty}\)</span>)</strong></p></li>
+<li><p><strong>Fuel Weight (<span class="math notranslate nohighlight">\(W_{fuel}\)</span>)</strong></p></li>
+</ul>
+</section>
+<section id="configuration-single-source-of-truth-file">
+<h3>3.4 Configuration “Single Source of Truth” File<a class="headerlink" href="#configuration-single-source-of-truth-file" title="Link to this heading">#</a></h3>
+<p>Submit a digital configuration file (choose either a <strong>MATLAB .m</strong> script or a <strong>JSON</strong> file) that serves as the central database for your aircraft parameters.</p>
+<ul class="simple">
+<li><p><strong>Content:</strong> This file must list every input variable, constant, and assumed value used in your design code (e.g., <span class="math notranslate nohighlight">\(C_{D0}\)</span>, <span class="math notranslate nohighlight">\(AR\)</span>, <span class="math notranslate nohighlight">\(W_{payload}\)</span>, <span class="math notranslate nohighlight">\(SFC\)</span> …).</p></li>
+<li><p><strong>Justification:</strong> Every parameter must be documented with a comment (MATLAB) or a description field (JSON) explaining the <strong>source or justification</strong> for that value (e.g., <em>“Derived from ray theory estimation”</em> or <em>“From Rotax 912 User Manual”</em>).</p></li>
+<li><p><strong>Version Control:</strong></p>
+<ul>
+<li><p>Include a header or metadata field tracking the <strong>Version Number</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">v1.2</span></code>).</p></li>
+<li><p><strong>Change Log:</strong> If a value has changed from a previous assignment (e.g., updating statistical engine weight to actual engine weight), you must explicitly state the <strong>reason for the change</strong> in the file comments.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="assignment_05.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assignment 5 - Constraint Diagram</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="assignment_07.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 7 - Configuration Generation and Selection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">1. Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">2. Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-propulsion-system-selection">Task 2.1: Propulsion System Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-2-wing-planform-airfoil-selection">Task 2.2: Wing Planform &amp; Airfoil Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-3-weight-refinement-sensitivity-update">Task 2.3: Weight Refinement (Sensitivity Update)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">3. Deliverables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameters-table">3.1 Input Parameters Table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propulsion-wing-output-report">3.2 Propulsion &amp; Wing Output Report</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-update">3.3 Weight Update</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-single-source-of-truth-file">3.4 Configuration “Single Source of Truth” File</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor of Practice
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

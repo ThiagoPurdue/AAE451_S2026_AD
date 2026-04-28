@@ -1,0 +1,2305 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Assignment 1 - Baseline Characterization &amp; Gap Analysis &#8212; AAE 451 Aircraft Conceptual Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'assignment_01';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assignment 2 - System Requirements" href="assignment_02.html" />
+    <link rel="prev" title="AAE 451: Comprehensive Aircraft Design Framework" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AAE 451 Aircraft Conceptual Design</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AAE 451: Comprehensive Aircraft Design Framework
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment 1 - Baseline Characterization &amp; Gap Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_02.html">Assignment 2 - System Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_03.html">Assignment 3 - Initial Sizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_04.html">Assignment 4 - Aerodynamic Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_05.html">Assignment 5 - Constraint Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_06.html">Assignment 6 - Design Check 1 – Propulsion Integration &amp; Wing Definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_07.html">Assignment 7 - Configuration Generation and Selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_08.html">Assignment 8 - Horizontal Tail Sizing and Trim Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_09.html">Assignment 9 - Performance Assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_10.html">Assignment 10 - Structural Loads and V-n Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_11.html">Assignment 11 - Multi-Spar Wing Box Structural Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_12.html">Assignment 12 - Dynamic Stability</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/assignment_01.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Assignment 1 - Baseline Characterization & Gap Analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">2. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-tasks">3. Required Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-a-data-verification-audit">Task A: Data Verification Audit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-b-detailed-geometric-characterization">Task B: Detailed Geometric Characterization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-c-performance-gap-analysis">Task C: Performance Gap Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-d-comparable-aircraft-survey">Task D: Comparable Aircraft Survey</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-e-comparative-wing-analysis">Task E: Comparative Wing Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">4. Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">5. Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-data-templates">Appendix: Data Templates</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-1-baseline-characterization-gap-analysis">
+<h1>Assignment 1 - Baseline Characterization &amp; Gap Analysis<a class="headerlink" href="#assignment-1-baseline-characterization-gap-analysis" title="Link to this heading">#</a></h1>
+<p><strong>Reference:</strong> 2025-2026 Undergraduate Team Aircraft Design RFP</p>
+<p><strong>Topic:</strong> Baseline Study and Historical Data Gathering</p>
+<section id="overview">
+<h2>1. Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The Request for Proposal (RFP) identifies the <strong>F/A-18E/F Super Hornet</strong> as the baseline aircraft your design must replace. To build a better aircraft, you must first understand the limitations and capabilities of the incumbent.</p>
+<p>This assignment establishes your design benchmark. You will gather historical and technical data to create a “Baseline Comparison Matrix” and identify the specific performance gaps your new design must close.</p>
+</section>
+<section id="objectives">
+<h2>2. Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Quantify</strong> key geometric and performance parameters of the F/A-18E/F Super Hornet.</p></li>
+<li><p><strong>Verify</strong> the accuracy of the RFP data (specifically the carrier suitability tables).</p></li>
+<li><p><strong>Identify</strong> performance gaps between current fleet capabilities and the new requirements.</p></li>
+<li><p><strong>Define</strong> the geometric constraints (spot factor, deck handling) that will drive your initial sizing.</p></li>
+</ul>
+</section>
+<section id="required-tasks">
+<h2>3. Required Tasks<a class="headerlink" href="#required-tasks" title="Link to this heading">#</a></h2>
+<section id="task-a-data-verification-audit">
+<h3>Task A: Data Verification Audit<a class="headerlink" href="#task-a-data-verification-audit" title="Link to this heading">#</a></h3>
+<p>The RFP provides a “Catalog of Current Carrier Suitability Data” in <strong>Section 5, Table 3.1.10-II</strong> (Page 8). This table lists an entry for “F/A-18”.</p>
+<ol class="arabic simple">
+<li><p>Locate independent, reliable sources for the <strong>F/A-18E/F Super Hornet</strong> (e.g., Navy Fact Files, SAR reports).</p></li>
+<li><p>Compare the <strong>Length</strong> and <strong>Gross Weight</strong> in the RFP table against your independent sources.</p></li>
+<li><p>Determine if the RFP table describes the <em>Super Hornet</em> (E/F) or the <em>Legacy Hornet</em> (A/C).</p></li>
+<li><p>If the RFP data is outdated, derive the correct values for the Super Hornet. <strong>Do not use incorrect baseline data for your design.</strong></p></li>
+</ol>
+</section>
+<section id="task-b-detailed-geometric-characterization">
+<h3>Task B: Detailed Geometric Characterization<a class="headerlink" href="#task-b-detailed-geometric-characterization" title="Link to this heading">#</a></h3>
+<p>Collect the detailed sizing data required to generate an initial CAD model. Populate <strong>Table 1</strong> with the following:</p>
+<ul class="simple">
+<li><p><strong>Main Wing:</strong> Reference Area (<span class="math notranslate nohighlight">\(S_{ref}\)</span>), Aspect Ratio (<span class="math notranslate nohighlight">\(AR\)</span>), Taper Ratio (<span class="math notranslate nohighlight">\(\lambda\)</span>), Sweep angles (<span class="math notranslate nohighlight">\(\Lambda_{LE}\)</span>, <span class="math notranslate nohighlight">\(\Lambda_{c/4}\)</span>), Airfoil types, Incidence, and Dihedral.</p></li>
+<li><p><strong>Empennage:</strong> Areas, spans, sweeps, taper ratios, and tail arms (<span class="math notranslate nohighlight">\(L_{ht}\)</span>, <span class="math notranslate nohighlight">\(L_{vt}\)</span>) for both horizontal and vertical stabilizers.</p></li>
+<li><p><strong>Fuselage:</strong> Total length (compare to the 50 ft RFP limit), max width/height, and cross-section shape.</p></li>
+<li><p><strong>Landing Gear:</strong> Wheelbase, track width, tire sizes, strut lengths, and tip-back angle.</p></li>
+</ul>
+</section>
+<section id="task-c-performance-gap-analysis">
+<h3>Task C: Performance Gap Analysis<a class="headerlink" href="#task-c-performance-gap-analysis" title="Link to this heading">#</a></h3>
+<p>Populate <strong>Table 2</strong> to compare the Super Hornet against the RFP requirements. Identify the most difficult constraints.</p>
+<ul class="simple">
+<li><p><strong>Range:</strong> Compare the 700 nm requirement against the Super Hornet’s actual internal-fuel combat radius.</p></li>
+<li><p><strong>Speed:</strong> Compare the Mach 2.0 dash speed goal against the Super Hornet’s top speed.</p></li>
+<li><p><strong>Approach:</strong> Compare the &lt;145 kt approach speed requirement against the baseline.</p></li>
+</ul>
+</section>
+<section id="task-d-comparable-aircraft-survey">
+<h3>Task D: Comparable Aircraft Survey<a class="headerlink" href="#task-d-comparable-aircraft-survey" title="Link to this heading">#</a></h3>
+<p>Research the aircraft listed in <strong>Table 3</strong>. These platforms represent successful design solutions for specific requirements relevant to this competition (e.g., high efficiency, variable geometry, stealth). Populate the table with their high-level parameters.</p>
+</section>
+<section id="task-e-comparative-wing-analysis">
+<h3>Task E: Comparative Wing Analysis<a class="headerlink" href="#task-e-comparative-wing-analysis" title="Link to this heading">#</a></h3>
+<p>Using the aircraft from Task D, analyze how mission roles influence wing design. Populate <strong>Table 4</strong>.</p>
+<ul class="simple">
+<li><p>Compare <strong>Aspect Ratio (AR)</strong> versus <strong>Sweep Angle</strong> across different eras.</p></li>
+<li><p>Calculate <strong>Wing Loading</strong> (<span class="math notranslate nohighlight">\(W_{MTOW}/S\)</span>) for each aircraft. This metric is critical for estimating approach speeds.</p></li>
+</ul>
+</section>
+</section>
+<section id="deliverables">
+<h2>4. Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<p><strong>1. Slides</strong>
+Submit a maximum of 4 professional slides containing:</p>
+<ul class="simple">
+<li><p><strong>Executive Summary:</strong> State the most significant design challenge found (e.g., length constraints vs. baseline size).</p></li>
+<li><p><strong>Data Audit Result:</strong> Definitive statement on the RFP table accuracy and the corrected values used.</p></li>
+<li><p><strong>Gap Analysis:</strong> Brief discussion of the primary performance driver (Range, Speed, or Payload).</p></li>
+<li><p><strong>Attachments:</strong> Your completed Tables 1, 2, 3, and 4.</p></li>
+</ul>
+<p><strong>2. Data Tables (.csv or .xlsx)</strong></p>
+<ul class="simple">
+<li><p>Submit the completed spreadsheet files.</p></li>
+</ul>
+</section>
+<section id="resources">
+<h2>5. Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>RFP Link 2:</strong> <em>F/A-18E/F Super Hornet Aircraft (F/A-18E/F) SAR</em></p></li>
+<li><p><strong>RFP Link 3:</strong> <em>Lessons Learned from the F/A-18E/F Development Programs</em></p></li>
+<li><p><strong>Official Navy Fact File:</strong> <a class="reference external" href="https://www.navy.mil/Resources/Fact-Files/Display-FactFiles/Article/2383479/fa-18a-d-hornet-and-fa-18ef-super-hornet-strike-fighter/">Navy.mil F/A-18E/F Page</a></p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="appendix-data-templates">
+<h2>Appendix: Data Templates<a class="headerlink" href="#appendix-data-templates" title="Link to this heading">#</a></h2>
+<p>Run the code block below to generate the blank data tables. You can fill them in programmatically or export them to Excel/CSV.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+
+<span class="c1"># ==========================================</span>
+<span class="c1"># TABLE GENERATION</span>
+<span class="c1"># ==========================================</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_detailed_geometry_template</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates Table 1: Detailed Geometric Parameters&quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Overall Length&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;= 50.0&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wingspan (Unfolded)&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;= 60.0&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wingspan (Folded)&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;= 35.0&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Max Takeoff Weight&quot;</span><span class="p">,</span> <span class="s2">&quot;lb&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;= 90,000&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Fineness Ratio (L/D)&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Max Cross-Section Width&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Max Cross-Section Height&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Reference Area (S)&quot;</span><span class="p">,</span> <span class="s2">&quot;ft^2&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Aspect Ratio (AR)&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Sweep (Leading Edge)&quot;</span><span class="p">,</span> <span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Sweep (Quarter Chord)&quot;</span><span class="p">,</span> <span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Taper Ratio&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Airfoil (Root / Tip)&quot;</span><span class="p">,</span> <span class="s2">&quot;Type&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Dihedral&quot;</span><span class="p">,</span> <span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Horiz. Tail Area&quot;</span><span class="p">,</span> <span class="s2">&quot;ft^2&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Horiz. Tail Sweep (LE)&quot;</span><span class="p">,</span> <span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Horiz. Tail Taper Ratio&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Horiz. Tail Arm (Wing c/4 to HT c/4)&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Vert. Tail Area (per side)&quot;</span><span class="p">,</span> <span class="s2">&quot;ft^2&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Vert. Tail Height&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Vert. Tail Cant Angle&quot;</span><span class="p">,</span> <span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Vert. Tail Taper Ratio&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Vert. Tail Arm (Wing c/4 to VT c/4)&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Landing Gear Type&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;Tricycle&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Landing Gear Wheelbase&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Landing Gear Track Width&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Main Tire Size (Dia x Width)&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Nose Tire Size (Dia x Width)&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;LG Tip-Back Angle&quot;</span><span class="p">,</span> <span class="s2">&quot;deg&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt; 15 (typ)&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;Unit&quot;</span><span class="p">,</span> <span class="s2">&quot;RFP Limit/Ref&quot;</span><span class="p">,</span> <span class="s2">&quot;F/A-18E/F Baseline (Actual)&quot;</span><span class="p">,</span> <span class="s2">&quot;Source&quot;</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_performance_template</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates Table 2: Performance Gap Analysis&quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Wind Over Deck (WOD)&quot;</span><span class="p">,</span> <span class="s2">&quot;Tropical Day&quot;</span><span class="p">,</span> <span class="s2">&quot;0 kts&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Launch Endspeed&quot;</span><span class="p">,</span> <span class="s2">&quot;Max Lift&quot;</span><span class="p">,</span> <span class="s2">&quot;See C-13-2 Curves&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Max Speed (Vmax)&quot;</span><span class="p">,</span> <span class="s2">&quot;30k ft&quot;</span><span class="p">,</span> <span class="s2">&quot;Mach 1.6 (Req)&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Combat Radius (Strike)&quot;</span><span class="p">,</span> <span class="s2">&quot;Internal Fuel&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;= 700 nm&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Sustained Turn Rate&quot;</span><span class="p">,</span> <span class="s2">&quot;20k ft&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;= 8.0 deg/sec&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Vertical Load Factor&quot;</span><span class="p">,</span> <span class="s2">&quot;Mid Mission&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;= 7.0 g&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Approach Speed&quot;</span><span class="p">,</span> <span class="s2">&quot;Landing Wt&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt; 145 kts&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Arresting WOD&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;= 15 kts&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Single Engine ROC&quot;</span><span class="p">,</span> <span class="s2">&quot;Approach&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;= 500 ft/min&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Metric&quot;</span><span class="p">,</span> <span class="s2">&quot;Condition&quot;</span><span class="p">,</span> <span class="s2">&quot;RFP Requirement&quot;</span><span class="p">,</span> <span class="s2">&quot;F/A-18E/F Baseline (Actual)&quot;</span><span class="p">,</span> <span class="s2">&quot;Source&quot;</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_comparable_aircraft_table_3</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates Table 3: Comparable Aircraft Survey&quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;F-35C Lightning II&quot;</span><span class="p">,</span> <span class="s2">&quot;Strike Fighter (Stealth)&quot;</span><span class="p">,</span> <span class="s2">&quot;2019&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Dassault Rafale M&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrier Strike&quot;</span><span class="p">,</span> <span class="s2">&quot;2001&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Grumman A-6 Intruder&quot;</span><span class="p">,</span> <span class="s2">&quot;Long Range Strike&quot;</span><span class="p">,</span> <span class="s2">&quot;1963&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;LTV A-7 Corsair II&quot;</span><span class="p">,</span> <span class="s2">&quot;Light Attack&quot;</span><span class="p">,</span> <span class="s2">&quot;1967&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Grumman F-14 Tomcat&quot;</span><span class="p">,</span> <span class="s2">&quot;Fleet Defense&quot;</span><span class="p">,</span> <span class="s2">&quot;1974&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Sukhoi Su-33&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrier Fighter&quot;</span><span class="p">,</span> <span class="s2">&quot;1998&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Aircraft&quot;</span><span class="p">,</span> <span class="s2">&quot;Role&quot;</span><span class="p">,</span> <span class="s2">&quot;IOC Year&quot;</span><span class="p">,</span> <span class="s2">&quot;MTOW (lb)&quot;</span><span class="p">,</span> <span class="s2">&quot;Max Speed&quot;</span><span class="p">,</span> <span class="s2">&quot;Radius (nm)&quot;</span><span class="p">,</span> <span class="s2">&quot;Source&quot;</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_wing_comparison_table_4</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates Table 4: Comparative Wing Analysis&quot;&quot;&quot;</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;F/A-18E/F (Baseline)&quot;</span><span class="p">,</span> <span class="s2">&quot;F-35C&quot;</span><span class="p">,</span> <span class="s2">&quot;Rafale M&quot;</span><span class="p">,</span> <span class="s2">&quot;A-6 Intruder&quot;</span><span class="p">,</span> <span class="s2">&quot;A-7 Corsair II&quot;</span><span class="p">,</span> <span class="s2">&quot;F-14 Tomcat&quot;</span><span class="p">,</span> <span class="s2">&quot;Su-33&quot;</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s2">&quot;Reference Area (S) [ft^2]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Aspect Ratio (AR) [-]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Span (b) [ft]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Taper Ratio (λ) [-]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Sweep (Leading Edge) [deg]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Thickness-to-Chord (t/c) [%]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;Wing Loading (W/S) [lb/ft^2]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># ==========================================</span>
+<span class="c1"># DISPLAY &amp; EXPORT</span>
+<span class="c1"># ==========================================</span>
+
+<span class="c1"># Generate empty tables</span>
+<span class="n">df_geo</span> <span class="o">=</span> <span class="n">get_detailed_geometry_template</span><span class="p">()</span>
+<span class="n">df_perf</span> <span class="o">=</span> <span class="n">get_performance_template</span><span class="p">()</span>
+<span class="n">df_comp</span> <span class="o">=</span> <span class="n">get_comparable_aircraft_table_3</span><span class="p">()</span>
+<span class="n">df_wing</span> <span class="o">=</span> <span class="n">get_wing_comparison_table_4</span><span class="p">()</span>
+
+<span class="c1"># Set Index to remove the generic index number (0, 1, 2...)</span>
+<span class="n">df_geo</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_perf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Metric&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_comp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Aircraft&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_wing</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Remove the index name to eliminate the extra header row</span>
+<span class="n">df_geo</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">df_perf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">df_comp</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">df_wing</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Display formatted tables</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Table 1: Detailed Geometric Characterization&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_geo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Table 2: Performance Gap Analysis&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_perf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Table 3: Comparable Aircraft Survey&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_comp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;### Table 4: Comparative Wing Analysis&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_wing</span><span class="p">)</span>
+
+<span class="c1"># Optional: Uncomment to export</span>
+<span class="c1"># df_geo.to_csv(&#39;01_Geometry_Detailed.csv&#39;)</span>
+<span class="c1"># df_perf.to_csv(&#39;02_Performance_Gap.csv&#39;)</span>
+<span class="c1"># df_comp.to_csv(&#39;03_Comparable_Aircraft.csv&#39;)</span>
+<span class="c1"># df_wing.to_csv(&#39;04_Wing_Comparison.csv&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<h3 class="rubric" id="table-1-detailed-geometric-characterization">Table 1: Detailed Geometric Characterization</h3>
+<div class="output text_html">
+  <div id="df-5e6e3a6d-05a2-4370-a62e-34c6d1de4c7b" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unit</th>
+      <th>RFP Limit/Ref</th>
+      <th>F/A-18E/F Baseline (Actual)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Overall Length</th>
+      <td>ft</td>
+      <td>&lt;= 50.0</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wingspan (Unfolded)</th>
+      <td>ft</td>
+      <td>&lt;= 60.0</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wingspan (Folded)</th>
+      <td>ft</td>
+      <td>&lt;= 35.0</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Max Takeoff Weight</th>
+      <td>lb</td>
+      <td>&lt;= 90,000</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Fineness Ratio (L/D)</th>
+      <td>-</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Max Cross-Section Width</th>
+      <td>ft</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Max Cross-Section Height</th>
+      <td>ft</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Reference Area (S)</th>
+      <td>ft^2</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Aspect Ratio (AR)</th>
+      <td>-</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Sweep (Leading Edge)</th>
+      <td>deg</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Sweep (Quarter Chord)</th>
+      <td>deg</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Taper Ratio</th>
+      <td>-</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Airfoil (Root / Tip)</th>
+      <td>Type</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Dihedral</th>
+      <td>deg</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Horiz. Tail Area</th>
+      <td>ft^2</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Horiz. Tail Sweep (LE)</th>
+      <td>deg</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Horiz. Tail Taper Ratio</th>
+      <td>-</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Horiz. Tail Arm (Wing c/4 to HT c/4)</th>
+      <td>ft</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vert. Tail Area (per side)</th>
+      <td>ft^2</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vert. Tail Height</th>
+      <td>ft</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vert. Tail Cant Angle</th>
+      <td>deg</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vert. Tail Taper Ratio</th>
+      <td>-</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vert. Tail Arm (Wing c/4 to VT c/4)</th>
+      <td>ft</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Landing Gear Type</th>
+      <td>-</td>
+      <td>Tricycle</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Landing Gear Wheelbase</th>
+      <td>ft</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Landing Gear Track Width</th>
+      <td>ft</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Main Tire Size (Dia x Width)</th>
+      <td>in</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Nose Tire Size (Dia x Width)</th>
+      <td>in</td>
+      <td>N/A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>LG Tip-Back Angle</th>
+      <td>deg</td>
+      <td>&gt; 15 (typ)</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5e6e3a6d-05a2-4370-a62e-34c6d1de4c7b')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-5e6e3a6d-05a2-4370-a62e-34c6d1de4c7b button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-5e6e3a6d-05a2-4370-a62e-34c6d1de4c7b');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-abe268ad-bfa6-4385-9a7c-28e3f15e36b8">
+      <button class="colab-df-quickchart" onclick="quickchart('df-abe268ad-bfa6-4385-9a7c-28e3f15e36b8')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-abe268ad-bfa6-4385-9a7c-28e3f15e36b8 button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+  <div id="id_9ca63f6e-02e1-45bd-b73e-a2887b339aec">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df_geo')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_9ca63f6e-02e1-45bd-b73e-a2887b339aec button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df_geo');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+</pre></div>
+</div>
+<h3 class="rubric" id="table-2-performance-gap-analysis">Table 2: Performance Gap Analysis</h3>
+<div class="output text_html">
+  <div id="df-be01f2b0-714b-48cc-bf82-52383e736076" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Condition</th>
+      <th>RFP Requirement</th>
+      <th>F/A-18E/F Baseline (Actual)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Wind Over Deck (WOD)</th>
+      <td>Tropical Day</td>
+      <td>0 kts</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Launch Endspeed</th>
+      <td>Max Lift</td>
+      <td>See C-13-2 Curves</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Max Speed (Vmax)</th>
+      <td>30k ft</td>
+      <td>Mach 1.6 (Req)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Combat Radius (Strike)</th>
+      <td>Internal Fuel</td>
+      <td>&gt;= 700 nm</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sustained Turn Rate</th>
+      <td>20k ft</td>
+      <td>&gt;= 8.0 deg/sec</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Vertical Load Factor</th>
+      <td>Mid Mission</td>
+      <td>&gt;= 7.0 g</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Approach Speed</th>
+      <td>Landing Wt</td>
+      <td>&lt; 145 kts</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Arresting WOD</th>
+      <td>Max</td>
+      <td>&lt;= 15 kts</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Single Engine ROC</th>
+      <td>Approach</td>
+      <td>&gt;= 500 ft/min</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-be01f2b0-714b-48cc-bf82-52383e736076')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-be01f2b0-714b-48cc-bf82-52383e736076 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-be01f2b0-714b-48cc-bf82-52383e736076');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-64fc385c-84fc-4981-83b9-52accafafb40">
+      <button class="colab-df-quickchart" onclick="quickchart('df-64fc385c-84fc-4981-83b9-52accafafb40')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-64fc385c-84fc-4981-83b9-52accafafb40 button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+  <div id="id_63a8d91d-8de7-47e4-8d63-6bddb29285c9">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df_perf')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_63a8d91d-8de7-47e4-8d63-6bddb29285c9 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df_perf');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+</pre></div>
+</div>
+<h3 class="rubric" id="table-3-comparable-aircraft-survey">Table 3: Comparable Aircraft Survey</h3>
+<div class="output text_html">
+  <div id="df-6a8e4f4f-6a26-44bb-8e40-5a1f37e5c186" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Role</th>
+      <th>IOC Year</th>
+      <th>MTOW (lb)</th>
+      <th>Max Speed</th>
+      <th>Radius (nm)</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>F-35C Lightning II</th>
+      <td>Strike Fighter (Stealth)</td>
+      <td>2019</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Dassault Rafale M</th>
+      <td>Carrier Strike</td>
+      <td>2001</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Grumman A-6 Intruder</th>
+      <td>Long Range Strike</td>
+      <td>1963</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>LTV A-7 Corsair II</th>
+      <td>Light Attack</td>
+      <td>1967</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Grumman F-14 Tomcat</th>
+      <td>Fleet Defense</td>
+      <td>1974</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sukhoi Su-33</th>
+      <td>Carrier Fighter</td>
+      <td>1998</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6a8e4f4f-6a26-44bb-8e40-5a1f37e5c186')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-6a8e4f4f-6a26-44bb-8e40-5a1f37e5c186 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-6a8e4f4f-6a26-44bb-8e40-5a1f37e5c186');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-60cde0b6-6aff-470d-a886-0fda057bb2ac">
+      <button class="colab-df-quickchart" onclick="quickchart('df-60cde0b6-6aff-470d-a886-0fda057bb2ac')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-60cde0b6-6aff-470d-a886-0fda057bb2ac button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+  <div id="id_a6295fb3-cb5a-4dbe-b99d-a1f8d062ab26">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df_comp')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_a6295fb3-cb5a-4dbe-b99d-a1f8d062ab26 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df_comp');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+</pre></div>
+</div>
+<h3 class="rubric" id="table-4-comparative-wing-analysis">Table 4: Comparative Wing Analysis</h3>
+<div class="output text_html">
+  <div id="df-d791bdc4-3639-45be-8c6e-c7bac8f22a2e" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>F/A-18E/F (Baseline)</th>
+      <th>F-35C</th>
+      <th>Rafale M</th>
+      <th>A-6 Intruder</th>
+      <th>A-7 Corsair II</th>
+      <th>F-14 Tomcat</th>
+      <th>Su-33</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Reference Area (S) [ft^2]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Aspect Ratio (AR) [-]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Span (b) [ft]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Taper Ratio (λ) [-]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Sweep (Leading Edge) [deg]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Thickness-to-Chord (t/c) [%]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Wing Loading (W/S) [lb/ft^2]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d791bdc4-3639-45be-8c6e-c7bac8f22a2e')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-d791bdc4-3639-45be-8c6e-c7bac8f22a2e button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-d791bdc4-3639-45be-8c6e-c7bac8f22a2e');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    <div id="df-91f78c16-78e2-4fce-8b30-ca13f7781965">
+      <button class="colab-df-quickchart" onclick="quickchart('df-91f78c16-78e2-4fce-8b30-ca13f7781965')"
+                title="Suggest charts"
+                style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+      </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+      <script>
+        async function quickchart(key) {
+          const quickchartButtonEl =
+            document.querySelector('#' + key + ' button');
+          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+          quickchartButtonEl.classList.add('colab-df-spinner');
+          try {
+            const charts = await google.colab.kernel.invokeFunction(
+                'suggestCharts', [key], {});
+          } catch (error) {
+            console.error('Error during call to suggestCharts:', error);
+          }
+          quickchartButtonEl.classList.remove('colab-df-spinner');
+          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+        }
+        (() => {
+          let quickchartButtonEl =
+            document.querySelector('#df-91f78c16-78e2-4fce-8b30-ca13f7781965 button');
+          quickchartButtonEl.style.display =
+            google.colab.kernel.accessAllowed ? 'block' : 'none';
+        })();
+      </script>
+    </div>
+
+  <div id="id_43795c6a-0370-4c2c-a4dd-15d7444eee73">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df_wing')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_43795c6a-0370-4c2c-a4dd-15d7444eee73 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df_wing');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">AAE 451: Comprehensive Aircraft Design Framework</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="assignment_02.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 2 - System Requirements</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">2. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-tasks">3. Required Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-a-data-verification-audit">Task A: Data Verification Audit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-b-detailed-geometric-characterization">Task B: Detailed Geometric Characterization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-c-performance-gap-analysis">Task C: Performance Gap Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-d-comparable-aircraft-survey">Task D: Comparable Aircraft Survey</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-e-comparative-wing-analysis">Task E: Comparative Wing Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">4. Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">5. Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-data-templates">Appendix: Data Templates</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Professor of Practice
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
